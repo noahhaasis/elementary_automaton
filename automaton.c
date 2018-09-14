@@ -9,7 +9,6 @@
 
 typedef unsigned char byte;
 
-
 void display(bool generation[], int size);
 void evolve(bool generation[], int size, int rule);
 /* Convert a array of booleans or bits into a decimal number,
