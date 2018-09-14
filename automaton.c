@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <time.h>
 
-#define GENERATION_SIZE 80
+#define DEFAULT_WIDTH 80
 
 typedef unsigned char byte;
 
@@ -20,17 +20,23 @@ void sleep(int ms);
 
 int main(int argc, char **argv) {
     int rule;
-    if (argc != 2) {
-        fprintf(stderr, "Usage: ./automaton <rule>\n");
+    int width = DEFAULT_WIDTH;
+
+    if (argc != 2 && argc != 3) {
+        fprintf(stderr, "Usage: ./automaton rule [width]\n");
         return -1;
     }
     rule = atoi(argv[1]);
-    bool current_generation[GENERATION_SIZE] = { 0 };
-    current_generation[GENERATION_SIZE/2] = true;
+
+    if (argc == 3)
+        width = atoi(argv[2]);
+    bool current_generation[width];
+    memset(current_generation, 0, width);
+    current_generation[width/2] = true;
 
     for (;;) {
-        display(current_generation, GENERATION_SIZE);
-        evolve(current_generation, GENERATION_SIZE, rule);
+        display(current_generation, width);
+        evolve(current_generation, width, rule);
         sleep(500);
     }
     return 0;
