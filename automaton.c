@@ -30,12 +30,6 @@ int main(int argc, char **argv) {
     bool current_generation[GENERATION_SIZE] = { 0 };
     current_generation[GENERATION_SIZE/2] = true;
 
-    // TODO: Remove these assertions later
-    assert(bool_to_num((bool []){true, true, true}, 3) == 7);
-    assert(bool_to_num((bool []){false, false, true}, 3) == 1);
-    assert(new_state((bool []){false, false, true}, 2) == true);
-    assert(new_state((bool []){false, false, true}, 1) == false);
-
     for (;;) {
         display(current_generation, GENERATION_SIZE);
         evolve(current_generation, GENERATION_SIZE, rule);
