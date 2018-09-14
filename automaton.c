@@ -11,8 +11,8 @@ typedef unsigned char byte;
 
 void display(bool generation[], int size);
 void evolve(bool generation[], int size, int rule);
-/* Convert a array of booleans or bits into a decimal number,
- * where the rightmost bit is the least significant
+/* Convert an array of booleans or bits into a decimal number,
+ * where the rightmost bit is the least significant (big-endian)
  */
 int bool_to_num(bool bits[], int size);
 bool new_state(bool *neighbours, byte rule);
