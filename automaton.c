@@ -27,6 +27,7 @@ int main(int argc, char **argv) {
         return -1;
     }
     rule = atoi(argv[1]);
+    assert(rule <= 0 && rule <= 255);
 
     if (argc == 3)
         width = atoi(argv[2]);
