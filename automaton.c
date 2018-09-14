@@ -2,11 +2,10 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
-#include <time.h>
 #include <assert.h>
+#include <time.h>
 
 #define GENERATION_SIZE 80
-#define ARR_LEN(x) (sizeof(x) / sizeof((x)[0]))
 
 typedef unsigned char byte;
 
