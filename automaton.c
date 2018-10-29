@@ -26,11 +26,13 @@ int main(int argc, char **argv) {
         fprintf(stderr, "Usage: ./automaton rule [width]\n");
         return -1;
     }
+
     rule = atoi(argv[1]);
     assert(rule >= 0 && rule <= 255);
 
     if (argc == 3)
         width = atoi(argv[2]);
+
     bool current_generation[width];
     memset(current_generation, 0, width);
     current_generation[width/2] = true;
