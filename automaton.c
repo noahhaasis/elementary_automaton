@@ -76,7 +76,7 @@ void evolve(bool generation[], int size, int rule) {
             neighbours = &generation[i-1];
         new_generation[i] = new_state(neighbours, rule);
     }
-    memcpy(generation, new_generation, size); // TODO: Make this a bit more efficient later
+    memcpy(generation, new_generation, size);
 }
 
 void sleep(int ms) {
